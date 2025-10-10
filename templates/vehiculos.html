@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}Vehículos Antiguos{% endblock %}
+
+{% block content %}
+<h2 class="mb-4 text-center" style="color: blue; -webkit-text-stroke: 1px yellow; font-weight: bold;"> Vehículos Antiguos y Clásicos</h2>
+<p class="mb-4 text-center">Estos son algunos vehiculos antiguos muy padres 🐀</p>
+
+<div class="row">
+    {% for vehiculo in [
+        {'img': 'https://imgs.search.brave.com/J2jZw56sRnqnpY86D8urLOXmcARFYewd5ZIoxgWLF2Q/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTA3/MzA5OTExMi9waG90/by8xOTI3LWZvcmQt/bW9kZWwtdC5qcGc_/cz02MTJ4NjEyJnc9/MCZrPTIwJmM9RDdp/dFZ3aXJ6dm1TU09N/Sm1kLTBiMXlNYmdJ/dkJzbkpKdW5KM0Ez/TUVIRT0', 'nombre': 'Ford Model T', 'anio': '1908', 'pais': 'Estados Unidos', 'desc': 'Considerado el primer automóvil producido en masa, revolucionó la industria automotriz.', 'motor': '2.9 L I4, 20 HP'},
+        {'img': 'https://imgs.search.brave.com/wgpvrq1XsvCIGlXiM3GmEQemMRCIsnzYaiCEu6nM3zQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9hc3Nl/dHMuZHlsZXIuY29t/L3VwbG9hZHMvcG9z/dHMvNDM2L2ltYWdl/cy8xMTE2NS9yb2xs/cy1yb3ljZS1zaWx2/ZXItZ2hvc3QuanBl/Zw', 'nombre': 'Rolls-Royce Silver Ghost', 'anio': '1907', 'pais': 'Reino Unido', 'desc': 'Famoso por su elegancia y fiabilidad, fue llamado “el mejor coche del mundo”.', 'motor': '7.0 L I6, 50 HP'},
+        {'img': 'https://i.pinimg.com/736x/fb/63/00/fb63009dfd6c02cff794688a295d0898.jpg', 'nombre': 'Bugatti Type 35', 'anio': '1925', 'pais': 'Francia', 'desc': 'Icono de las carreras en los años 20, con más de 1,000 victorias en competición.', 'motor': '2.0 L I8, 90 HP'},
+        {'img': 'https://i.pinimg.com/1200x/18/5a/75/185a7537daff56498228fe164743855c.jpg', 'nombre': 'Cadillac V16', 'anio': '1930', 'pais': 'Estados Unidos', 'desc': 'Símbolo de lujo y poder, con uno de los motores más grandes jamás fabricados.', 'motor': '7.4 L V16, 185 HP'},
+        {'img': 'https://i.pinimg.com/1200x/95/f1/91/95f1917a87d797f144ed0d320d551faa.jpg', 'nombre': 'Mercedes-Benz 540K', 'anio': '1936', 'pais': 'Alemania', 'desc': 'Auto de lujo con líneas elegantes y un potente motor sobrealimentado.', 'motor': '5.4 L I8, 180 HP'},
+        {'img': 'https://i.pinimg.com/1200x/8c/a3/dd/8ca3dd235ed62defa964496e28f54bcf.jpg', 'nombre': 'Volkswagen Beetle', 'anio': '1954', 'pais': 'Alemania', 'desc': 'El “Escarabajo”, famoso por su diseño simple, económico y confiable.', 'motor': '1.2 L Bóxer, 36 HP'},
+        {'img': 'https://i.pinimg.com/1200x/44/e0/a8/44e0a829fb991f7d55b6ce2d9e7ba110.jpg', 'nombre': 'Chevrolet Bel Air', 'anio': '1957', 'pais': 'Estados Unidos', 'desc': 'Emblema del estilo americano de los 50s, con aletas traseras y cromo brillante.', 'motor': '4.6 L V8, 162 HP'},
+        {'img': 'https://i.pinimg.com/736x/29/44/0b/29440beff17b71bab4cb46d6633bbf9f.jpg', 'nombre': 'Jaguar E-Type', 'anio': '1961', 'pais': 'Reino Unido', 'desc': 'Considerado por Enzo Ferrari como el coche más bello jamás construido.', 'motor': '3.8 L I6, 265 HP'},
+        {'img': 'https://i.pinimg.com/1200x/29/44/0b/29440beff17b71bab4cb46d6633bbf9f.jpg', 'nombre': 'Ferrari 250 GTO', 'anio': '1962', 'pais': 'Italia', 'desc': 'Uno de los autos más valiosos del mundo, diseñado para competir y ganar.', 'motor': '3.0 L V12, 300 HP'},
+        {'img': 'https://i.pinimg.com/736x/65/48/a1/6548a126e7dc2b287e7ee7063e1cd895.jpg', 'nombre': 'Ford Mustang GT', 'anio': '1967', 'pais': 'Estados Unidos', 'desc': 'Símbolo del músculo americano, popularizado por la cultura pop.', 'motor': '6.4 L V8, 320 HP'},
+        {'img': 'https://i.pinimg.com/1200x/26/ba/df/26badf0e8df40fe9bb00b11893e5d102.jpg', 'nombre': 'Porsche 911', 'anio': '1964', 'pais': 'Alemania', 'desc': 'Deportivo legendario por su diseño y manejo, aún en producción hoy día.', 'motor': '2.0 L Bóxer, 130 HP'},
+        {'img': 'https://i.pinimg.com/1200x/59/43/7a/59437a4f6c07eb1f37684f77770afb45.jpg', 'nombre': 'Lamborghini Miura', 'anio': '1969', 'pais': 'Italia', 'desc': 'Primer superdeportivo con motor central, diseño adelantado a su época.', 'motor': '3.9 L V12, 370 HP'}
+    ] %}
+    <div class="col-md-4 mb-4">
+        <div class="card shadow-sm h-100 border-0">
+            <img src="{{ vehiculo.img }}" class="card-img-top" alt="{{ vehiculo.nombre }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ vehiculo.nombre }}</h5>
+                <p class="text-muted"><em>{{ vehiculo.anio }} — {{ vehiculo.pais }}</em></p>
+                <p class="card-text">{{ vehiculo.desc }}</p>
+                <ul class="list-unstyled small mt-3">
+                    <li><strong>Motor:</strong> {{ vehiculo.motor }}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

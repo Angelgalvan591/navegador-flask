@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+
+{% block title %}Maravillas del Mundo{% endblock %}
+
+{% block content %}
+<h2 class="mb-4 text-center" style="color: blue; -webkit-text-stroke: 1px yellow; font-weight: bold;">
+    Maravillas del Mundo
+</h2>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+
+    <div class="col">
+        <div class="card shadow-sm h-100">
+            <video class="card-img-top rounded" width="100%" height="200" controls preload="metadata">
+                <source src="{{ url_for('static', filename='videos/muralla.mp4') }}" type="video/mp4">
+                Tu navegador no soporta el video.
+            </video>
+            <div class="card-body">
+                <h5 class="card-title">La Gran Muralla China</h5>
+                <p class="card-text">Imponente muralla construida hace más de 2000 años para proteger el imperio chino.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="card shadow-sm h-100">
+            <video class="card-img-top rounded" width="100%" height="200" controls preload="metadata">
+                <source src="{{ url_for('static', filename='videos/petra.mp4') }}" type="video/mp4">
+                Tu navegador no soporta el video.
+            </video>
+            <div class="card-body">
+                <h5 class="card-title">Petra, Jordania</h5>
+                <p class="card-text">Antigua ciudad tallada en roca rosada, conocida como la “ciudad perdida”.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="card shadow-sm h-100">
+            <video class="card-img-top rounded" width="100%" height="200" controls preload="metadata">
+                <source src="{{ url_for('static', filename='videos/cristo_redentor.mp4') }}" type="video/mp4">
+                Tu navegador no soporta el video.
+            </video>
+            <div class="card-body">
+                <h5 class="card-title">El Cristo Redentor, Brasil</h5>
+                <p class="card-text">Una de las estatuas más icónicas del mundo, símbolo de Río de Janeiro y del Brasil.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="card shadow-sm h-100">
+            <video class="card-img-top rounded" width="100%" height="200" controls preload="metadata">
+                <source src="{{ url_for('static', filename='videos/machu_picchu.mp4') }}" type="video/mp4">
+                Tu navegador no soporta el video.
+            </video>
+            <div class="card-body">
+                <h5 class="card-title">Machu Picchu, Perú</h5>
+                <p class="card-text">La mística ciudad inca enclavada en los Andes, una de las joyas arqueológicas del planeta.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="card shadow-sm h-100">
+            <video class="card-img-top rounded" width="100%" height="200" controls preload="metadata">
+                <source src="{{ url_for('static', filename='videos/chichen_itza.mp4') }}" type="video/mp4">
+                Tu navegador no soporta el video.
+            </video>
+            <div class="card-body">
+                <h5 class="card-title">Chichén Itzá, México</h5>
+                <p class="card-text">La ciudad maya más famosa, con la imponente pirámide de Kukulkán.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="card shadow-sm h-100">
+            <video class="card-img-top rounded" width="100%" height="200" controls preload="metadata">
+                <source src="{{ url_for('static', filename='videos/el_coliseo.mp4') }}" type="video/mp4">
+                Tu navegador no soporta el video.
+            </video>
+            <div class="card-body">
+                <h5 class="card-title">El Coliseo, Italia</h5>
+                <p class="card-text">El anfiteatro más grande jamás construido, símbolo eterno del Imperio Romano.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="card shadow-sm h-100">
+            <video class="card-img-top rounded" width="100%" height="200" controls preload="metadata">
+                <source src="{{ url_for('static', filename='videos/taj_mahal.mp4') }}" type="video/mp4">
+                Tu navegador no soporta el video.
+            </video>
+            <div class="card-body">
+                <h5 class="card-title">El Taj Mahal, India</h5>
+                <p class="card-text">Majestuoso mausoleo de mármol blanco, considerado una de las obras más bellas del mundo.</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
