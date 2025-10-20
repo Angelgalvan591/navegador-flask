@@ -6,7 +6,12 @@
     <title>{% block title %}Mi Navegador Flask{% endblock %}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body style="background-image: url(https://i.pinimg.com/736x/5a/14/0b/5a140b3799eba70a2c5c660f196b192c.jpg); background-size: cover; background-attachment: fixed;">
+<body style="margin: 0; padding: 0; min-height: 100vh;">
+    <!-- Video de fondo -->
+    <video autoplay muted loop playsinline style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
+        <source src="{{ url_for('static', filename='img/fondo.mp4') }}" type="video/mp4">
+    </video>
+
     <nav class="navbar navbar-expand-lg " style="background-color: #0e76e583">
         <div class="container-fluid">
             <a class="navbar-brand" href="{{ url_for('inicio') }}">Flask Navegador</a>
@@ -20,16 +25,18 @@
                     <li class="nav-item"><a class="nav-link" href="{{ url_for('vehiculos') }}">Vehículos</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ url_for('maravillas') }}">Maravillas</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ url_for('acerca') }}">Acerca de</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('login_page') }}">Iniciar Sesión</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('registro') }}">Registrarse</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <main class="container mt-4">
+    <main class="container mt-4" style="position: relative; z-index: 1;">
         {% block content %}{% endblock %}
     </main>
 
-    <footer class=" text-white text-center p-3 mt-4" style="background-color: #0e76e583">
+    <footer class=" text-white text-center p-3 mt-4" style="background-color: #0e76e583; position: relative; z-index: 1;">
         <p class="mb-0" >Practica de flask y jinja de Angel Giancarlo Galvan Diaz</p>
     </footer>
 

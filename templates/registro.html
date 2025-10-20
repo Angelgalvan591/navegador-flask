@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}Sonic - Registrarse{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <h1 class="text-center mt-5" style="font-size: 3.5rem; font-weight: bold; color: #fbbf24; text-shadow: -2px -2px 0 #1e3a8a, 2px -2px 0 #1e3a8a, -2px 2px 0 #1e3a8a, 2px 2px 0 #1e3a8a; font-family: Arial Black, sans-serif;">Navegador Flask</h1>
+        
+        <div class="card mt-4" style="background: rgba(255, 255, 255, 0.3); backdrop-filter: blur(8px); border: 2px solid rgba(255, 255, 255, 0.4);">
+            <div class="card-body p-4">
+                <h3 class="text-white mb-2">Crear Cuenta</h3>
+                <p class="text-white mb-3">Nvegador flask</p>
+                
+                <form method="POST" action="{{ url_for('registro') }}">
+                    <div class="row">
+                        <div class="col-6">
+                            <input type="text" name="nombre" class="form-control mb-2" placeholder="Nombre" required>
+                        </div>
+                        <div class="col-6">
+                            <input type="text" name="apellido" class="form-control mb-2" placeholder="Apellido" required>
+                        </div>
+                    </div>
+                    
+                    <input type="email" name="email" class="form-control mb-2" placeholder="Correo electrónico" required>
+                    
+                    <input type="text" name="usuario" class="form-control mb-2" placeholder="Nombre de usuario" required>
+                    
+                    <input type="password" name="password" class="form-control mb-2" placeholder="Contraseña" required>
+                    
+                    <input type="password" name="password2" class="form-control mb-3" placeholder="Confirmar contraseña" required>
+                    
+                    <button type="submit" class="btn btn-warning w-100 mb-3 fw-bold fs-5" style="color: #1e3a8a;">Registrarse</button>
+                    
+                    <div class="text-center">
+                        <a href="{{ url_for('login_page') }}" class="text-warning">¿Ya tienes cuenta? Inicia sesión</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
