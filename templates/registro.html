@@ -1,39 +1,101 @@
 {% extends 'base.html' %}
 
-{% block title %}Sonic - Registrarse{% endblock %}
+{% block title %}Registro{% endblock %}
 
 {% block content %}
 <div class="row justify-content-center">
-    <div class="col-md-6">
-        <h1 class="text-center mt-5" style="font-size: 3.5rem; font-weight: bold; color: #fbbf24; text-shadow: -2px -2px 0 #1e3a8a, 2px -2px 0 #1e3a8a, -2px 2px 0 #1e3a8a, 2px 2px 0 #1e3a8a; font-family: Arial Black, sans-serif;">Navegador Flask</h1>
-        
-        <div class="card mt-4" style="background: rgba(255, 255, 255, 0.3); backdrop-filter: blur(8px); border: 2px solid rgba(255, 255, 255, 0.4);">
-            <div class="card-body p-4">
-                <h3 class="text-white mb-2">Crear Cuenta</h3>
-                <p class="text-white mb-3">Nvegador flask</p>
+    <div class="col-md-6 col-lg-5">
+        <div class="card shadow-lg" style="background-color: rgba(247, 0, 255, 0.8); border: 2px solid #e3eb00ff;">
+            <div class="card-body p-5">
+                <h2 class="text-center text-warning mb-4">
+                    <i class="bi bi-person-plus-fill"></i> Crear Cuenta
+                </h2>
                 
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                                {{ message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+
                 <form method="POST" action="{{ url_for('registro') }}">
-                    <div class="row">
-                        <div class="col-6">
-                            <input type="text" name="nombre" class="form-control mb-2" placeholder="Nombre" required>
-                        </div>
-                        <div class="col-6">
-                            <input type="text" name="apellido" class="form-control mb-2" placeholder="Apellido" required>
-                        </div>
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label text-white">Nombre</label>
+                        <input type="text" 
+                               class="form-control" 
+                               id="nombre" 
+                               name="nombre" 
+                               required
+                               placeholder="Tu nombre"
+                               style="background-color: rgba(4, 103, 241, 0.67); color: white; border: 1px solid #e3eb00ff;">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="apellido" class="form-label text-white">Apellido</label>
+                        <input type="text" 
+                               class="form-control" 
+                               id="apellido" 
+                               name="apellido" 
+                               required
+                               placeholder="Tu apellido"
+                               style="background-color: rgba(4, 103, 241, 0.67); color: white; border: 1px solid #e3eb00ff;">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label text-white">Email</label>
+                        <input type="email" 
+                               class="form-control" 
+                               id="email" 
+                               name="email" 
+                               required
+                               placeholder="tu@email.com"
+                               style="background-color: rgba(4, 103, 241, 0.67); color: white; border: 1px solid #e3eb00ff;">
                     </div>
                     
-                    <input type="email" name="email" class="form-control mb-2" placeholder="Correo electrónico" required>
+                    <div class="mb-3">
+                        <label for="usuario" class="form-label text-white">Usuario</label>
+                        <input type="text" 
+                               class="form-control" 
+                               id="usuario" 
+                               name="usuario" 
+                               required
+                               placeholder="Elige un nombre de usuario"
+                               style="background-color: rgba(4, 103, 241, 0.67); color: white; border: 1px solid #e3eb00ff;">
+                    </div>
                     
-                    <input type="text" name="usuario" class="form-control mb-2" placeholder="Nombre de usuario" required>
+                    <div class="mb-3">
+                        <label for="password" class="form-label text-white">Contraseña</label>
+                        <input type="password" 
+                               class="form-control" 
+                               id="password" 
+                               name="password" 
+                               required
+                               placeholder="Crea una contraseña segura"
+                               style="background-color: rgba(4, 103, 241, 0.67); color: white; border: 1px solid #e3eb00ff;">
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="password2" class="form-label text-white">Confirmar Contraseña</label>
+                        <input type="password" 
+                               class="form-control" 
+                               id="password2" 
+                               name="password2" 
+                               required
+                               placeholder="Confirma tu contraseña"
+                               style="background-color: rgba(4, 103, 241, 0.67); color: white; border: 1px solid #e3eb00ff;">
+                    </div>
                     
-                    <input type="password" name="password" class="form-control mb-2" placeholder="Contraseña" required>
-                    
-                    <input type="password" name="password2" class="form-control mb-3" placeholder="Confirmar contraseña" required>
-                    
-                    <button type="submit" class="btn btn-warning w-100 mb-3 fw-bold fs-5" style="color: #1e3a8a;">Registrarse</button>
+                    <button type="submit" class="btn btn-warning w-100 mb-3">
+                        Registrarse
+                    </button>
                     
                     <div class="text-center">
-                        <a href="{{ url_for('login_page') }}" class="text-warning">¿Ya tienes cuenta? Inicia sesión</a>
+                        <p class="text-white mb-2">¿Ya tienes cuenta?</p>
+                        <a href="{{ url_for('login') }}" class="text-danger">Inicia sesión aquí</a>
                     </div>
                 </form>
             </div>
